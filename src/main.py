@@ -17,7 +17,7 @@ from utils import Datasets
 @click.option('--data', type=str, default='NetEase')
 def main(seed, data):
     set_seed(seed)
-    conf = yaml.safe_load(open("config.yaml"))[data]
+    conf = yaml.safe_load(open("/kaggle/input/coheat/src/config.yaml"))[data]
     conf['dataset'] = data
     dataset = Datasets(conf)
     conf['num_users'] = dataset.num_users
